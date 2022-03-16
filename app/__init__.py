@@ -1,5 +1,15 @@
 from flask import Flask
+from flask_login import LoginManager
+from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config.from_object('config')
 
-from app.controllers import default
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+lm = LoginManager(app)
+
+from app.controllers import application, index, login, register
+from app.models import user

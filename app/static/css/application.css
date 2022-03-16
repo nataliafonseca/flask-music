@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.header-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #ffffff;
+  max-width: 1200px;
+  width: 90%;
+  height: 4rem;
+  margin-top: 1rem;
+  border-radius: 20px;
+  padding-right: 2rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+.content {
+  background: #ffffff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.icon {
+  fill: #333333;
+  height: 30px;
+  width: 30px;
+  margin-left: 0.5rem;
+}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="../static/css/form.css">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="content">
+    <h2 class="text-center mb-4">SIGN UP</h2>
+    {% if username_taken %}
+    <div class="alert alert-danger">Username unavailable</div>
+    {% endif %}
+    <form action="" method="POST">
+      {{ form.csrf_token }}
+      <div class="form-floating mb-3">
+        {{ form.username(class="form-control", placeholder="Username") }}
+        <label for="username">Username</label>
+        {% if form.errors.username %}
+        <ul>
+          {% for e in form.errors.username %}
+          <li class="small text-danger mt-1">{{ e }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      <div class="form-floating">
+        {{ form.password(class="form-control", placeholder="Password") }}
+        <label for="password">Password</label>
+        {% if form.errors.password %}
+        <ul>
+          {% for e in form.errors.password %}
+          <li class="small text-danger mt-1">{{ e }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+      <p class="text-end small mt-2"><a href="/login">Login</a></p>
+
+      <div class="d-grid mt-4">
+        <button type="submit" class="btn btn-primary" onclick="this.form.submit()">REGISTER</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
